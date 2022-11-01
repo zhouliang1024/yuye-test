@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yuye.dal.dao.AccountDao">
+
+    <resultMap type="com.example.yuye.dal.entity.Account" id="AccountMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="gmtCreated" column="gmt_created" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="amount" column="amount" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AccountMap">
+        select
+          id, gmt_created, gmt_modified, user_id, type, amount
+        from account
+        where id = #{id}
+    </select>
+
+    <select id="queryByUserIdAndType" resultMap="AccountMap">
+        select
+            id, gmt_created, gmt_modified, user_id, type, amount
+        from account
+        where user_id = #{userId} and type = #{type}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AccountMap">
+        select
+          id, gmt_created, gmt_modified, user_id, type, amount
+        from account
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from account
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into account(gmt_created, gmt_modified, user_id, type, amount)
+        values (#{gmtCreated}, #{gmtModified}, #{userId}, #{type}, #{amount})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into account(gmt_created, gmt_modified, user_id, type, amount)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.userId}, #{entity.type}, #{entity.amount})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into account(gmt_created, gmt_modified, user_id, type, amount)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.userId}, #{entity.type}, #{entity.amount})
+        </foreach>
+        on duplicate key update
+        gmt_created = values(gmt_created),
+        gmt_modified = values(gmt_modified),
+        user_id = values(user_id),
+        type = values(type),
+        amount = values(amount)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update account
+        <set>
+            <if test="gmtCreated != null">
+                gmt_created = #{gmtCreated},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="amount != null">
+                amount = #{amount},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from account where id = #{id}
+    </delete>
+
+</mapper>
+

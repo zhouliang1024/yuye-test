@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yuye.dal.dao.BalanceDetailDao">
+
+    <resultMap type="com.example.yuye.dal.entity.BalanceDetail" id="BalanceDetailMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="gmtCreated" column="gmt_created" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="payNo" column="pay_no" jdbcType="VARCHAR"/>
+        <result property="amount" column="amount" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="balanceStatus" column="balance_status" jdbcType="INTEGER"/>
+        <result property="fee" column="fee" jdbcType="INTEGER"/>
+        <result property="subsidy" column="subsidy" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="bizId" column="biz_id" jdbcType="INTEGER"/>
+        <result property="bizType" column="biz_type" jdbcType="INTEGER"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BalanceDetailMap">
+        select
+          id, gmt_created, gmt_modified, user_id, pay_no, amount, type, balance_status, fee, subsidy, content, biz_id, biz_type, is_deleted
+        from balance_detail
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BalanceDetailMap">
+        select
+          id, gmt_created, gmt_modified, user_id, pay_no, amount, type, balance_status, fee, subsidy, content, biz_id, biz_type, is_deleted
+        from balance_detail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="payNo != null and payNo != ''">
+                and pay_no = #{payNo}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="balanceStatus != null">
+                and balance_status = #{balanceStatus}
+            </if>
+            <if test="fee != null">
+                and fee = #{fee}
+            </if>
+            <if test="subsidy != null">
+                and subsidy = #{subsidy}
+            </if>
+            <if test="content != null and content != ''">
+                and content = #{content}
+            </if>
+            <if test="bizId != null">
+                and biz_id = #{bizId}
+            </if>
+            <if test="bizType != null">
+                and biz_type = #{bizType}
+            </if>
+            <if test="isDeleted != null">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from balance_detail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="payNo != null and payNo != ''">
+                and pay_no = #{payNo}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="balanceStatus != null">
+                and balance_status = #{balanceStatus}
+            </if>
+            <if test="fee != null">
+                and fee = #{fee}
+            </if>
+            <if test="subsidy != null">
+                and subsidy = #{subsidy}
+            </if>
+            <if test="content != null and content != ''">
+                and content = #{content}
+            </if>
+            <if test="bizId != null">
+                and biz_id = #{bizId}
+            </if>
+            <if test="bizType != null">
+                and biz_type = #{bizType}
+            </if>
+            <if test="isDeleted != null">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into balance_detail(gmt_created, gmt_modified, user_id, pay_no, amount, type, balance_status, fee, subsidy, content, biz_id, biz_type, is_deleted)
+        values (#{gmtCreated}, #{gmtModified}, #{userId}, #{payNo}, #{amount}, #{type}, #{balanceStatus}, #{fee}, #{subsidy}, #{content}, #{bizId}, #{bizType}, #{isDeleted})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into balance_detail(gmt_created, gmt_modified, user_id, pay_no, amount, type, balance_status, fee, subsidy, content, biz_id, biz_type, is_deleted)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.userId}, #{entity.payNo}, #{entity.amount}, #{entity.type}, #{entity.balanceStatus}, #{entity.fee}, #{entity.subsidy}, #{entity.content}, #{entity.bizId}, #{entity.bizType}, #{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into balance_detail(gmt_created, gmt_modified, user_id, pay_no, amount, type, balance_status, fee, subsidy, content, biz_id, biz_type, is_deleted)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.userId}, #{entity.payNo}, #{entity.amount}, #{entity.type}, #{entity.balanceStatus}, #{entity.fee}, #{entity.subsidy}, #{entity.content}, #{entity.bizId}, #{entity.bizType}, #{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+        gmt_created = values(gmt_created),
+        gmt_modified = values(gmt_modified),
+        user_id = values(user_id),
+        pay_no = values(pay_no),
+        amount = values(amount),
+        type = values(type),
+        balance_status = values(balance_status),
+        fee = values(fee),
+        subsidy = values(subsidy),
+        content = values(content),
+        biz_id = values(biz_id),
+        biz_type = values(biz_type),
+        is_deleted = values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update balance_detail
+        <set>
+            <if test="gmtCreated != null">
+                gmt_created = #{gmtCreated},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="payNo != null and payNo != ''">
+                pay_no = #{payNo},
+            </if>
+            <if test="amount != null">
+                amount = #{amount},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="balanceStatus != null">
+                balance_status = #{balanceStatus},
+            </if>
+            <if test="fee != null">
+                fee = #{fee},
+            </if>
+            <if test="subsidy != null">
+                subsidy = #{subsidy},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="bizId != null">
+                biz_id = #{bizId},
+            </if>
+            <if test="bizType != null">
+                biz_type = #{bizType},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from balance_detail where id = #{id}
+    </delete>
+
+</mapper>
+

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yuye.dal.dao.BalanceDao">
+
+    <resultMap type="com.example.yuye.dal.entity.Balance" id="BalanceMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="gmtCreated" column="gmt_created" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+        <result property="payNo" column="pay_no" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="amount" column="amount" jdbcType="INTEGER"/>
+        <result property="fee" column="fee" jdbcType="INTEGER"/>
+        <result property="subsidy" column="subsidy" jdbcType="INTEGER"/>
+        <result property="afterBalance" column="after_balance" jdbcType="INTEGER"/>
+        <result property="beforeBalance" column="before_balance" jdbcType="INTEGER"/>
+        <result property="relationUserId" column="relation_user_id" jdbcType="VARCHAR"/>
+        <result property="relationAccountType" column="relation_account_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BalanceMap">
+        select id,
+               gmt_created,
+               gmt_modified,
+               pay_no,
+               user_id,
+               type,
+               amount,
+               fee,
+               subsidy,
+               after_balance,
+               before_balance,
+               relation_user_id,
+               relation_account_type
+        from balance
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BalanceMap">
+        select
+        id, gmt_created, gmt_modified, pay_no, user_id, type, amount, fee, subsidy, after_balance, before_balance,
+        relation_user_id, relation_account_type
+        from balance
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="payNo != null and payNo != ''">
+                and pay_no = #{payNo}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+            <if test="fee != null">
+                and fee = #{fee}
+            </if>
+            <if test="subsidy != null">
+                and subsidy = #{subsidy}
+            </if>
+            <if test="afterBalance != null">
+                and after_balance = #{afterBalance}
+            </if>
+            <if test="beforeBalance != null">
+                and before_balance = #{beforeBalance}
+            </if>
+            <if test="relationUserId != null and relationUserId != ''">
+                and relation_user_id = #{relationUserId}
+            </if>
+            <if test="relationAccountType != null">
+                and relation_account_type = #{relationAccountType}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from balance
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="gmtCreated != null">
+                and gmt_created = #{gmtCreated}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+            <if test="payNo != null and payNo != ''">
+                and pay_no = #{payNo}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="amount != null">
+                and amount = #{amount}
+            </if>
+            <if test="fee != null">
+                and fee = #{fee}
+            </if>
+            <if test="subsidy != null">
+                and subsidy = #{subsidy}
+            </if>
+            <if test="afterBalance != null">
+                and after_balance = #{afterBalance}
+            </if>
+            <if test="beforeBalance != null">
+                and before_balance = #{beforeBalance}
+            </if>
+            <if test="relationUserId != null and relationUserId != ''">
+                and relation_user_id = #{relationUserId}
+            </if>
+            <if test="relationAccountType != null">
+                and relation_account_type = #{relationAccountType}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into balance(gmt_created, gmt_modified, pay_no, user_id, type, amount, fee, subsidy, after_balance,
+                            before_balance, relation_user_id, relation_account_type)
+        values (#{gmtCreated}, #{gmtModified}, #{payNo}, #{userId}, #{type}, #{amount}, #{fee}, #{subsidy},
+                #{afterBalance}, #{beforeBalance}, #{relationUserId}, #{relationAccountType})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into balance(gmt_created, gmt_modified, pay_no, user_id, type, amount, fee, subsidy, after_balance,
+        before_balance, relation_user_id, relation_account_type)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.payNo}, #{entity.userId}, #{entity.type},
+            #{entity.amount}, #{entity.fee}, #{entity.subsidy}, #{entity.afterBalance}, #{entity.beforeBalance},
+            #{entity.relationUserId}, #{entity.relationAccountType})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into balance(gmt_created, gmt_modified, pay_no, user_id, type, amount, fee, subsidy, after_balance,
+        before_balance, relation_user_id, relation_account_type)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.gmtCreated}, #{entity.gmtModified}, #{entity.payNo}, #{entity.userId}, #{entity.type},
+            #{entity.amount}, #{entity.fee}, #{entity.subsidy}, #{entity.afterBalance}, #{entity.beforeBalance},
+            #{entity.relationUserId}, #{entity.relationAccountType})
+        </foreach>
+        on duplicate key update
+        gmt_created = values(gmt_created),
+        gmt_modified = values(gmt_modified),
+        pay_no = values(pay_no),
+        user_id = values(user_id),
+        type = values(type),
+        amount = values(amount),
+        fee = values(fee),
+        subsidy = values(subsidy),
+        after_balance = values(after_balance),
+        before_balance = values(before_balance),
+        relation_user_id = values(relation_user_id),
+        relation_account_type = values(relation_account_type)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update balance
+        <set>
+            <if test="gmtCreated != null">
+                gmt_created = #{gmtCreated},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+            <if test="payNo != null and payNo != ''">
+                pay_no = #{payNo},
+            </if>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="amount != null">
+                amount = #{amount},
+            </if>
+            <if test="fee != null">
+                fee = #{fee},
+            </if>
+            <if test="subsidy != null">
+                subsidy = #{subsidy},
+            </if>
+            <if test="afterBalance != null">
+                after_balance = #{afterBalance},
+            </if>
+            <if test="beforeBalance != null">
+                before_balance = #{beforeBalance},
+            </if>
+            <if test="relationUserId != null and relationUserId != ''">
+                relation_user_id = #{relationUserId},
+            </if>
+            <if test="relationAccountType != null">
+                relation_account_type = #{relationAccountType},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from balance
+        where id = #{id}
+    </delete>
+
+</mapper>
+

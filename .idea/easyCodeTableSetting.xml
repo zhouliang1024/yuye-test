@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EasyCodeTableSetting">
+    <option name="tableInfoMap">
+      <map>
+        <entry key=" pay.account">
+          <value>
+            <TableInfoDTO>
+              <option name="comment" value="账户" />
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="主键" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="创建时间" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtCreated" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="更新时间" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtModified" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="用户id" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="userId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="1为可用余额，2为佣金，3为临时余额账户,4为保证金账户，5为提现账户,  6为待结算账户" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="type" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="金额" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="amount" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="Account" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-dal" />
+              <option name="savePackageName" value="com.example.yuye.dal" />
+              <option name="savePath" value="./yuye-test-dal/src/main/java/com/example/yuye/dal" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key=" pay.balance">
+          <value>
+            <TableInfoDTO>
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="主键" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="创建时间" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtCreated" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="修改时间" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtModified" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="支付单号" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="payNo" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="用户id" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="userId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="类型" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="type" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="金额" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="amount" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="手续费" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="fee" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="补贴" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="subsidy" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="操作后金额" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="afterBalance" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="操作前金额" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="beforeBalance" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="关联用户id" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="relationUserId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="关联账户类型" />
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="relationAccountType" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="Balance" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-dal" />
+              <option name="savePackageName" value="com.example.yuye.dal" />
+              <option name="savePath" value="./yuye-test-dal/src/main/java/com/example/yuye/dal" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key=" pay.balance_detail">
+          <value>
+            <TableInfoDTO>
+              <option name="comment" value="账单" />
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtCreated" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtModified" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="userId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="payNo" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="amount" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="type" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="balanceStatus" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="fee" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="subsidy" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="content" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="bizId" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="bizType" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="isDeleted" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="BalanceDetail" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-dal" />
+              <option name="savePackageName" value="com.example.yuye.dal" />
+              <option name="savePath" value="./yuye-test-dal/src/main/java/com/example/yuye/dal" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key=" pay.pay_order">
+          <value>
+            <TableInfoDTO>
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtCreated" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtModified" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="orderNo" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="payNo" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="userId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="amount" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="content" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="payType" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="PayOrder" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-dal" />
+              <option name="savePackageName" value="com.example.yuye.dal" />
+              <option name="savePath" value="./yuye-test-dal/src/main/java/com/example/yuye/dal" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key="com.example.yuye.biz.dto.Demo">
+          <value>
+            <TableInfoDTO>
+              <option name="comment" value="" />
+              <option name="fullColumn">
+                <list />
+              </option>
+              <option name="name" value="Demo" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="" />
+              <option name="savePackageName" value="" />
+              <option name="savePath" value="" />
+              <option name="templateGroupName" value="" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key="database0.goods_1">
+          <value>
+            <TableInfoDTO>
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="goodsId" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="goodsName" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="goodsType" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="Goods1" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-dal" />
+              <option name="savePackageName" value="com.example.yuye" />
+              <option name="savePath" value="./yuye-test-dal/src/main/java/com/example/yuye" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key="database0.user">
+          <value>
+            <TableInfoDTO>
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="id" />
+                    <option name="custom" value="false" />
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="姓名" />
+                    <option name="custom" value="false" />
+                    <option name="name" value="name" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="年龄" />
+                    <option name="custom" value="false" />
+                    <option name="name" value="age" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="User" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="" />
+              <option name="savePackageName" value="" />
+              <option name="savePath" value="" />
+              <option name="templateGroupName" value="" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key="pay.balance">
+          <value>
+            <TableInfoDTO>
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtCreated" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="gmtModified" />
+                    <option name="type" value="java.util.Date" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="payNo" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="userId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="type" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="amount" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="fee" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="subsidy" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="afterBalance" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="beforeBalance" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="relationUserId" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="custom" value="false" />
+                    <option name="ext">
+                      <map>
+                        <entry key="jdbcType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                        <entry key="sqlType">
+                          <value>
+                            <Object />
+                          </value>
+                        </entry>
+                      </map>
+                    </option>
+                    <option name="name" value="relationAccountType" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="Balance" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="yuye-test-biz" />
+              <option name="savePackageName" value="com.example.yuye.dal.domain.biz" />
+              <option name="savePath" value="./yuye-test-biz/src/main/java/com/example/yuye/dal/domain/biz" />
+              <option name="templateGroupName" value="Default" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

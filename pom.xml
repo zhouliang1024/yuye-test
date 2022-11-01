@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>yuye-test</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>yuye-test-domain</module>
+        <module>yuye-test-dal</module>
+        <module>yuye-test-biz</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <druid.version>1.1.9</druid.version>
+        <sharding-jdbc-core.version>1.5.4</sharding-jdbc-core.version>
+        <hutool.http.version>5.5.6</hutool.http.version>
+<!--        <kstry-core.version>1.0.6</kstry-core.version>-->
+    </properties>
+</project>
