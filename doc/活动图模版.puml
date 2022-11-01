@@ -1,0 +1,31 @@
+@startuml
+|风控|
+start
+#palegreen:请求分配卡号;
+note left: 1、client_id 客户id\n2、biz_id 店铺id\n3、bizType 银行类型\n<b>4、req_id 请求id（请求方唯一）
+
+|#AntiqueWhite|主站账户|
+:请求异步放号;
+#pink:同步返回申请成功，无返回卡号;
+|主站账户|
+|风控|
+:落accId发放的子账号记录，并绑定req_id，状态为申请放号中;
+end
+|主站账户|
+start
+:异步放号回调通知成功;
+if (放号成功) then (是)
+        : 绑定客户和卡号，设置卡等级;
+else (否)
+:记录失败原因，失败次数，到达阈值进行告警;
+stop
+endif
+if (副卡) then (是)
+#palegreen:回调通知风控;
+else (否)
+stop
+endif
+|风控|
+#pink:通过req_id关联发放的子账户记录，更新卡号，更新状态为成功;
+end
+@enduml
